@@ -1,6 +1,6 @@
 # Proyecto de Ordenamiento Para Concesionaria de Porsche
 
-Este programa gestiona y ordena información sobre modelos de coches Porsche utilizando algoritmos de ordenamiento eficientes y estructuras de datos apropiadas.
+Este programa gestiona y ordena información sobre modelos de coches Porsche.
 
 ## Características principales
 
