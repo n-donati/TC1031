@@ -1,6 +1,13 @@
 # Proyecto de Ordenamiento Para Concesionaria de Porsche
 > [!IMPORTANT]
-> # g++ main.cpp -o app
+> ## Linux
+> **g++ main.cpp -o app**
+>
+> ## Windows
+> **g++ main.cpp -o app.exe**
+>
+> ## macOS
+> **g++ main.cpp -o app**
 
 Este programa gestiona y ordena información sobre modelos de coches Porsche.
 
