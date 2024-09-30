@@ -1,5 +1,5 @@
 # Proyecto de Ordenamiento Para Concesionaria de Porsche
-Este programa gestiona y ordena información sobre modelos de coches Porsche.
+Este programa gestiona y ordena información sobre modelos de coches Porsche. 
 
 > [!IMPORTANT]
 > ## Linux
