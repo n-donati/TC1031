@@ -27,6 +27,8 @@ int partition(std::vector<T>& arr, int low, int high, bool (*compare)(const T&, 
     return i + 1;
 }
 
+// Complejidad temporal peor caso: O(n^2)
+// Complejidad espacial: O(log n)
 template<typename T>
 void quickSort(std::vector<T>& arr, int low, int high, bool (*compare)(const T&, const T&)) {
     if (low < high) {
