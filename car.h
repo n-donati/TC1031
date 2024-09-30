@@ -4,6 +4,8 @@
 
 #include <string>
 #include <iostream>
+#include <sstream>
+#include <iomanip>
 
 class Car {
 private:
@@ -33,10 +35,6 @@ public:
 };
 
 // car.cpp
-#include "car.h"
-#include <sstream>
-#include <iomanip>
-
 Car::Car(const std::string& model, int releaseYear, double maxSpeed)
     : model(model), releaseYear(releaseYear), maxSpeed(maxSpeed) {}
 
