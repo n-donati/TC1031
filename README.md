@@ -11,9 +11,6 @@ Este programa gestiona y ordena información sobre modelos de coches Porsche.
 > ## macOS
 > # **g++ main.cpp -o app**
 
-**GCC (G++) Installation Guide**
-[MinGW-w64](https://www.mingw-w64.org/downloads/)
-
 ## Características principales
 
 1. Carga de datos desde un archivo CSV.
