@@ -35,7 +35,7 @@ void quickSort(std::vector<T>& arr, int low, int high, bool (*compare)(const T&,
         int pi = partition(arr, low, high, compare);
 
         quickSort(arr, low, pi - 1, compare);
-        quickSort(arr, pi + 1, high, compare);
+        quickSort(arr, pi + 1,   high, compare);
     }
 }
 
@@ -48,7 +48,9 @@ bool compareByMaxSpeed(const Car& a, const Car& b) {
 }
 
 bool compareByModelName(const Car& a, const Car& b) {
-    return a.getModel() <= b.getModel();
+    std::string modelA = a.getModel();
+    std::string modelB = b.getModel();
+    return modelA < modelB;
 }
 
 void sortByReleaseYear(std::vector<Car>& cars) {

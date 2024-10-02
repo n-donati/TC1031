@@ -18,14 +18,21 @@ int main() {
     do {
         displayMenu();
         std::cin >> choice;
+        if (std::cin.fail()) {
+            std::cin.clear();
+            std::cin.ignore(10000, '\n');
+            choice = -1;
+        }
+        
         if (choice >= 1 && choice <= 3) {
             sortCars(cars, choice);
             displayCars(cars);
-        } else if (choice != 4) {
+        } else if (choice != 0) {
             std::cout << "Elección no válida. Inténtalo de nuevo.\n";
         }
-    } while (choice != 4);
-
+    } while (choice != 0);
+    
+    std::cout << "\n";
     return 0;
 }
 
@@ -34,7 +41,7 @@ void displayMenu() {
     std::cout << "1. Ordenar por fecha de lanzamiento\n";
     std::cout << "2. Ordenar por velocidad máxima\n";
     std::cout << "3. Ordenar por nombre del modelo\n";
-    std::cout << "4. Salir\n";
+    std::cout << "0. Salir\n";
     std::cout << "Introduzca su elección: ";
 }
 

@@ -42,17 +42,14 @@ Car::Car() : model("NA"), releaseYear(0), maxSpeed(0.0) {}
 
 Car::~Car() {}
 
-// Getters
 std::string Car::getModel() const { return model; }
 int Car::getReleaseYear() const { return releaseYear; }
 double Car::getMaxSpeed() const { return maxSpeed; }
 
-// Setters
 void Car::setModel(const std::string& newModel) { model = newModel; }
 void Car::setReleaseYear(int newReleaseYear) { releaseYear = newReleaseYear; }
 void Car::setMaxSpeed(double newMaxSpeed) { maxSpeed = newMaxSpeed; }
 
-// Operators
 bool Car::operator<(const Car& other) const { return this->maxSpeed < other.maxSpeed; }
 bool Car::operator>(const Car& other) const { return this->maxSpeed > other.maxSpeed; }
 bool Car::operator==(const Car& other) const {
