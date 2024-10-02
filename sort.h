@@ -44,7 +44,7 @@ bool compareByReleaseYear(const Car& a, const Car& b) {
 }
 
 bool compareByMaxSpeed(const Car& a, const Car& b) {
-    return a.getMaxSpeed() >= b.getMaxSpeed();
+    return a.getMaxSpeed() <= b.getMaxSpeed();
 }
 
 bool compareByModelName(const Car& a, const Car& b) {
