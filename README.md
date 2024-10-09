@@ -1,15 +1,20 @@
 # Proyecto de Ordenamiento Para Concesionaria de Porsche
-Este programa gestiona y ordena información sobre modelos de coches Porsche. 
+
+Este programa gestiona y ordena información sobre modelos de coches Porsche utilizando un Árbol Binario de Búsqueda (BST).
 
 > [!IMPORTANT]
+>
 > ## Linux
-> # **g++ main.cpp -o app**
+>
+> # g++ main.cpp -o app
 >
 > ## Windows
-> # **g++ main.cpp -o app.exe**
+>
+> # g++ main.cpp -o app.exe
 >
 > ## macOS
-> # **g++ main.cpp -o app**
+>
+> # g++ main.cpp -o app
 
 ## Características principales
 
@@ -18,16 +23,19 @@ Este programa gestiona y ordena información sobre modelos de coches Porsche.
    - Fecha de lanzamiento
    - Velocidad máxima
    - Nombre del modelo
-3. Visualización de resultados ordenados.
+3. Búsqueda eficiente de modelos específicos.
+4. Visualización de resultados ordenados.
 
 ## Implementación
 
-- Utiliza QuickSort para un rendimiento óptimo en el ordenamiento de datos.
-- Emplea vectores para almacenar y manipular eficientemente la información de los coches.
+- Utiliza un Árbol Binario de Búsqueda (BST) para almacenar y gestionar eficientemente los datos de los coches.
+- Emplea QuickSort para ordenar.
 - Implementa lectura de archivos CSV para cargar datos iniciales.
 
 ## Análisis de complejidad
 
-- QuickSort: O(n log n) en promedio, garantizando un rendimiento eficiente incluso con grandes conjuntos de datos.
-- Operaciones de vector: O(1) para acceso y O(n) para inserción al final.
-- Complejidad general del programa: O(n log n), determinada por el algoritmo de ordenamiento.
+- Inserción en BST: O(log n) en promedio, O(n) en el peor caso.
+- Búsqueda en BST: O(log n) en promedio, O(n) en el peor caso.
+- QuickSort para ordenamientos adicionales: O(n log n) en promedio.
+- Recorrido inorden del BST: O(n).
+- Complejidad general del programa: O(n log n), determinada por el algoritmo de ordenamiento QuickSort para criterios específicos.

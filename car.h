@@ -1,4 +1,3 @@
-// car.h 
 #ifndef CAR_H
 #define CAR_H
 
@@ -32,9 +31,9 @@ public:
 
     std::string toString() const;
     friend std::ostream& operator<<(std::ostream& os, const Car& car);
+    friend std::istream& operator>>(std::istream& is, Car& car);
 };
 
-// car.cpp
 Car::Car(const std::string& model, int releaseYear, double maxSpeed)
     : model(model), releaseYear(releaseYear), maxSpeed(maxSpeed) {}
 
@@ -50,8 +49,8 @@ void Car::setModel(const std::string& newModel) { model = newModel; }
 void Car::setReleaseYear(int newReleaseYear) { releaseYear = newReleaseYear; }
 void Car::setMaxSpeed(double newMaxSpeed) { maxSpeed = newMaxSpeed; }
 
-bool Car::operator<(const Car& other) const { return this->maxSpeed < other.maxSpeed; }
-bool Car::operator>(const Car& other) const { return this->maxSpeed > other.maxSpeed; }
+bool Car::operator<(const Car& other) const { return this->model < other.model; }
+bool Car::operator>(const Car& other) const { return this->model > other.model; }
 bool Car::operator==(const Car& other) const {
     return this->model == other.model &&
            this->releaseYear == other.releaseYear &&
@@ -60,9 +59,7 @@ bool Car::operator==(const Car& other) const {
 
 std::string Car::toString() const {
     std::ostringstream oss;
-    oss << "Modelo: " << model
-        << ", Año: " << releaseYear
-        << ", Velocidad Máxima: " << std::fixed << std::setprecision(2) << maxSpeed << " km/h";
+    oss << model << " " << releaseYear << " " << std::fixed << std::setprecision(2) << maxSpeed;
     return oss.str();
 }
 
@@ -71,4 +68,9 @@ std::ostream& operator<<(std::ostream& os, const Car& car) {
     return os;
 }
 
-#endif // CAR_H
+std::istream& operator>>(std::istream& is, Car& car) {
+    is >> car.model >> car.releaseYear >> car.maxSpeed;
+    return is;
+}
+
+#endif
