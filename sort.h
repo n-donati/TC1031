@@ -45,8 +45,4 @@ inline bool compareByMaxSpeed(const Car& a, const Car& b) {
     return a.getMaxSpeed() < b.getMaxSpeed();
 }
 
-inline bool compareByModelName(const Car& a, const Car& b) {
-    return a.getModel() < b.getModel();
-}
-
 #endif

@@ -35,7 +35,7 @@ int main() {
                 displayCars(sortedCars);
                 break;
             case 3:
-                sortedCars = carBST.getSortedCars(compareByModelName);
+                sortedCars = carBST.inorder();
                 displayCars(sortedCars);
                 break;
             case 4: {
@@ -43,7 +43,7 @@ int main() {
                 std::cout << "Enter model to find: ";
                 std::cin >> modelToFind;
                 
-                std::vector<Car> allCars = carBST.getSortedCars(compareByModelName);
+                std::vector<Car> allCars = carBST.inorder();
                 
                 bool found = false;
                 for (const Car& car : allCars) {
@@ -76,7 +76,6 @@ void displayMenu() {
     std::cout << "1. Sort by release year\n";
     std::cout << "2. Sort by max speed\n";
     std::cout << "3. Sort by model name\n";
-    std::cout << "4. Find model\n";
     std::cout << "0. Exit\n";
     std::cout << "Enter your choice: ";
 }
