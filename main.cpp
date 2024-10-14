@@ -1,3 +1,8 @@
+/*
+/ NICOLAS DONATI
+/ A01708256
+*/
+
 #include <iostream>
 #include "bst.h"
 #include "sort.h"
