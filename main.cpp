@@ -6,13 +6,20 @@
 #include <iostream>
 #include "bst.h"
 #include "sort.h"
+#include <fstream>
 
 void displayMenu();
 void displayCars(const std::vector<Car>& cars);
+void saveToCSV(const std::vector<Car>& cars, const std::string& filename);
 
 int main() {
     BST<Car> carBST;
     carBST.loadFromCSV("porsche_models.csv");
+
+    std::vector<Car> sortedByReleaseYear;
+    std::vector<Car> sortedByMaxSpeed;
+    std::vector<Car> sortedByModelName;
+    bool sortedReleaseYear = false, sortedMaxSpeed = false, sortedModelName = false;
 
     int choice;
     do {
@@ -27,16 +34,19 @@ int main() {
         std::vector<Car> sortedCars;
         switch (choice) {
             case 1:
-                sortedCars = carBST.getSortedCars(compareByReleaseYear);
-                displayCars(sortedCars);
+                sortedByReleaseYear = carBST.getSortedCars(compareByReleaseYear);
+                displayCars(sortedByReleaseYear);
+                sortedReleaseYear = true;
                 break;
             case 2:
-                sortedCars = carBST.getSortedCars(compareByMaxSpeed);
-                displayCars(sortedCars);
+                sortedByMaxSpeed = carBST.getSortedCars(compareByMaxSpeed);
+                displayCars(sortedByMaxSpeed);
+                sortedMaxSpeed = true;
                 break;
             case 3:
-                sortedCars = carBST.inorder();
-                displayCars(sortedCars);
+                sortedByModelName = carBST.inorder();
+                displayCars(sortedByModelName);
+                sortedModelName = true;
                 break;
             case 4: {
                 std::string modelToFind;
@@ -67,6 +77,16 @@ int main() {
                 std::cout << "Invalid choice. Please try again.\n";
         }
     } while (choice != 0);
+
+    if (sortedReleaseYear) {
+        saveToCSV(sortedByReleaseYear, "sorted_by_release_year.csv");
+    }
+    if (sortedMaxSpeed) {
+        saveToCSV(sortedByMaxSpeed, "sorted_by_max_speed.csv");
+    }
+    if (sortedModelName) {
+        saveToCSV(sortedByModelName, "sorted_by_model_name.csv");
+    }
    
     return 0;
 }
@@ -85,4 +105,17 @@ void displayCars(const std::vector<Car>& cars) {
     for (const auto& car : cars) {
         std::cout << car << std::endl;
     }
+}
+
+void saveToCSV(const std::vector<Car>& cars, const std::string& filename) {
+    std::ofstream file(filename);
+    if (!file.is_open()) {
+        std::cerr << "Error opening file: " << filename << std::endl;
+        return;
+    }
+    file << "Model,ReleaseYear,MaxSpeed\n";
+    for (const auto& car : cars) {
+        file << car.getModel() << "," << car.getReleaseYear() << "," << car.getMaxSpeed() << "\n";
+    }
+    file.close();
 }
