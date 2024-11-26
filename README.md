@@ -2,15 +2,8 @@
 
 Este programa gestiona y ordena información sobre modelos de coches Porsche utilizando un Árbol Binario de Búsqueda (BST).
 
-> [!IMPORTANT]
->
-> ## Linux
->
+> [!NOTE]
 > `g++ main.cpp -o app`
->
-> ## Windows
->
-> `g++ main.cpp -o app.exe`
 
 ## Características principales
 
@@ -100,3 +93,21 @@ Este programa gestiona y ordena información sobre modelos de coches Porsche uti
    - Desglose: O(log n) para la búsqueda en el BST
 
 La complejidad general del programa está dominada por la construcción inicial del BST y las operaciones de ordenamiento, resultando en una complejidad de O(n log n) para la mayoría de los casos prácticos.
+
+
+> [!IMPORTANT]
+> ## Correciones
+>
+> Sep 30:
+> 	- Cambio de los archivos a headers, para que haya un solo .cpp.
+> 	- Comentarios explicando complejidad de cada función
+>
+> Oct 2:
+> 	- Junta con Benji, arreglo del sort por default.
+>	- Arreglo de signo para sort.
+>
+> Oct 14:
+>	- Arreglo de manejo de vectores para el sorting de modelos por velocidad y año.
+> 
+> Nov 26:
+>  - Hacer mas claro el guardar archivo
