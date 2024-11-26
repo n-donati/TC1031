@@ -96,7 +96,7 @@ void displayMenu() {
     std::cout << "1. Sort by release year\n";
     std::cout << "2. Sort by max speed\n";
     std::cout << "3. Sort by model name\n";
-    std::cout << "0. Exit\n";
+    std::cout << "0. Exit and save files\n";
     std::cout << "Enter your choice: ";
 }
 
