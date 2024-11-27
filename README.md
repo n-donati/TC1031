@@ -103,11 +103,14 @@ La complejidad general del programa está dominada por la construcción inicial 
 > 	- Comentarios explicando complejidad de cada función
 >
 > Oct 2:
-> 	- Junta con Benji, arreglo del sort por default.
->	- Arreglo de signo para sort.
+>   - Junta con Benji, arreglo del sort por default.
+> 	- Arreglo de signo para sort.
 >
 > Oct 14:
->	- Arreglo de manejo de vectores para el sorting de modelos por velocidad y año.
+>	  - Arreglo de manejo de vectores para el sorting de modelos por velocidad y año.
 > 
 > Nov 26:
->  - Hacer mas claro el guardar archivo
+>   - Hacer mas claro el guardar archivo.
+>
+> Nov 27:
+>   - Agregar funcion de agregar coche.

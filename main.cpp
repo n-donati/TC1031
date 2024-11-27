@@ -11,6 +11,7 @@
 void displayMenu();
 void displayCars(const std::vector<Car>& cars);
 void saveToCSV(const std::vector<Car>& cars, const std::string& filename);
+void addNewCar(BST<Car>& carBST);
 
 int main() {
     BST<Car> carBST;
@@ -69,7 +70,9 @@ int main() {
                 }
                 break;
             }
-
+            case 5:
+                addNewCar(carBST);
+                break;
             case 0:
                 std::cout << "Exiting program.\n";
                 break;
@@ -97,6 +100,7 @@ void displayMenu() {
     std::cout << "2. Sort by max speed\n";
     std::cout << "3. Sort by model name\n";
     std::cout << "4. Search by model name\n";
+    std::cout << "5. Add a new car\n";
     std::cout << "0. Exit and save files\n";
     std::cout << "Enter your choice: ";
 }
@@ -119,4 +123,21 @@ void saveToCSV(const std::vector<Car>& cars, const std::string& filename) {
         file << car.getModel() << "," << car.getReleaseYear() << "," << car.getMaxSpeed() << "\n";
     }
     file.close();
+}
+
+void addNewCar(BST<Car>& carBST) {
+    std::string model;
+    int releaseYear;
+    double maxSpeed;
+
+    std::cout << "Enter model: ";
+    std::cin >> model;
+    std::cout << "Enter release year: ";
+    std::cin >> releaseYear;
+    std::cout << "Enter max speed: ";
+    std::cin >> maxSpeed;
+
+    Car newCar(model, releaseYear, maxSpeed);
+    carBST.add(newCar);
+    std::cout << "Car added successfully.\n";
 }
